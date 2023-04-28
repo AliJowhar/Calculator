@@ -1,0 +1,39 @@
+body {
+  height: 95vh;
+  background-color: aqua;
+}
+
+.calculator {
+  width: 550px;
+  height: 542px;
+  background-color: rgb(0, 0, 0);
+  border: 5px solid black;
+}
+
+.screen {
+  background-color: white;
+  height: 160px;
+  margin: 9px;
+  border: 1px solid black;
+  border-radius: 3%;
+}
+
+.gridBtns {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+#clear {
+  background-color: blanchedalmond;
+  grid-column: 4/1;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* reduce font size */
+  padding: 20px;
+}
