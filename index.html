@@ -5,41 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <title>Calculator</title>
   </head>
   <body>
     <div class="main">
       <div class="calculator">
-        <div class="screen"></div>
+        <div id="screen">SCREEN</div>
         <div class="gridBtns">
           <!-- first row -->
           <button id="clear">clear</button>
           <button id="delete">delete</button>
 
           <!-- second row -->
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>÷</button>
+          <button id="btn-7">7</button>
+          <button id="btn-8">8</button>
+          <button id="btn-9">9</button>
+          <button id="btn-divide">÷</button>
 
           <!-- third row -->
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>x</button>
+          <button id="btn-4">4</button>
+          <button id="btn-5">5</button>
+          <button id="btn-6">6</button>
+          <button id="btn-x">x</button>
 
           <!-- fourth row -->
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>-</button>
+          <button id="btn-1">1</button>
+          <button id="btn-2">2</button>
+          <button id="btn-3">3</button>
+          <button id="btn-minus">-</button>
 
           <!-- fifth row -->
           <button>.</button>
-          <button>0</button>
-          <button>=</button>
-          <button>+</button>
+          <button id="btn-0">0</button>
+          <button id="btn-equal">=</button>
+          <button id="btn-plus">+</button>
         </div>
       </div>
     </div>
