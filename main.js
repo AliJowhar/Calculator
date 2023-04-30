@@ -2,8 +2,8 @@
 const display = document.getElementById("screen");
 const clearBtn = document.getElementById("clear");
 const deleteBtn = document.getElementById("delete");
-const numberBtns = document.querySelectorAll("button");
-const equals = document.getElementById("btn-equal");
+const numberBtns = document.querySelectorAll("#btn-num");
+const equals = document.getElementById("equal");
 
 let firstNumber = null;
 let operator = null;
@@ -46,5 +46,3 @@ const populateDisplay = function () {
   });
 };
 populateDisplay();
-
-console.log(numberBtns);
