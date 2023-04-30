@@ -50,40 +50,32 @@ populateDisplay();
 
 plusBtn.addEventListener("click", function () {
   firstNumber = "";
-  operator = "";
-
-  firstNumber += display.textContent;
   operator = add;
 
+  firstNumber += display.textContent;
   display.textContent = "";
 });
 
 minusBtn.addEventListener("click", function () {
   firstNumber = "";
-  operator = "";
-
-  firstNumber += display.textContent;
   operator = subtract;
 
+  firstNumber += display.textContent;
   display.textContent = "";
 });
 
 multiplyBtn.addEventListener("click", function () {
   firstNumber = "";
-  operator = "";
-
-  firstNumber += display.textContent;
   operator = multiply;
 
+  firstNumber += display.textContent;
   display.textContent = "";
 });
 divideBtn.addEventListener("click", function () {
   firstNumber = "";
-  operator = "";
-
-  firstNumber += display.textContent;
   operator = divide;
 
+  firstNumber += display.textContent;
   display.textContent = "";
 });
 
@@ -97,4 +89,10 @@ equalsBtn.addEventListener("click", function () {
     display.textContent = operate(firstNumber, secondNumber, operator);
   firstNumber = "";
   secondNumber = "";
+});
+clearBtn.addEventListener("click", function () {
+  firstNumber = "";
+  secondNumber = "";
+  display.textContent = "";
+  operator = "";
 });
