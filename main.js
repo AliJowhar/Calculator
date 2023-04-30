@@ -76,6 +76,7 @@ divideBtn.addEventListener("click", function () {
   operator = divide;
 
   firstNumber += display.textContent;
+
   display.textContent = "";
 });
 
