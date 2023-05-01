@@ -1,10 +1,12 @@
 "use strict";
 const display = document.getElementById("screen");
 const numberBtns = document.querySelectorAll("#btn-num");
+
 const clearBtn = document.getElementById("clear");
 const deleteBtn = document.getElementById("delete");
 const divideBtn = document.getElementById("divide");
 const multiplyBtn = document.getElementById("multiply");
+
 const minusBtn = document.getElementById("minus");
 const plusBtn = document.getElementById("plus");
 const equalsBtn = document.getElementById("equal");
@@ -13,20 +15,17 @@ let firstNumber = null;
 let operator = null;
 let secondNumber = null;
 
-// basic math operators
+// Basic math operators
 
 const add = function (a, b) {
   return a + b;
 };
-
 const subtract = function (a, b) {
   return a - b;
 };
-
 const multiply = function (a, b) {
   return a * b;
 };
-
 const divide = function (a, b) {
   return a / b;
 };
@@ -35,7 +34,6 @@ const operate = function (num1, num2, operator) {
   num2 = parseFloat(num2);
   return operator(num1, num2);
 };
-
 const populateDisplay = function () {
   numberBtns.forEach(function (btns) {
     btns.addEventListener("click", function () {
@@ -51,7 +49,7 @@ populateDisplay();
 plusBtn.addEventListener("click", function () {
   firstNumber = "";
   operator = add;
-
+  console.log(firstNumber);
   firstNumber += display.textContent;
   display.textContent = "";
 });
