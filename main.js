@@ -1,7 +1,6 @@
 "use strict";
 const display = document.getElementById("screen");
 const numberBtns = document.querySelectorAll("#btn-num");
-
 const clearBtn = document.getElementById("clear");
 const deleteBtn = document.getElementById("delete");
 const divideBtn = document.getElementById("divide");
@@ -14,6 +13,7 @@ const equalsBtn = document.getElementById("equal");
 let firstNumber = null;
 let operator = null;
 let secondNumber = null;
+let result = null;
 
 // Basic math operators
 
@@ -47,51 +47,80 @@ const populateDisplay = function () {
 populateDisplay();
 
 plusBtn.addEventListener("click", function () {
-  firstNumber = "";
-  operator = add;
-  console.log(firstNumber);
-  firstNumber += display.textContent;
-  display.textContent = "";
+  if (firstNumber !== null) {
+    // If a first number exists, perform the previous calculation before moving on to the next one
+    secondNumber = display.textContent;
+    result = operate(firstNumber, secondNumber, operator);
+    firstNumber = result;
+    operator = add;
+    display.textContent = "";
+  } else {
+    firstNumber = display.textContent;
+    operator = add;
+    display.textContent = "";
+  }
 });
 
 minusBtn.addEventListener("click", function () {
-  firstNumber = "";
-  operator = subtract;
-
-  firstNumber += display.textContent;
-  display.textContent = "";
+  if (firstNumber !== null) {
+    secondNumber = display.textContent;
+    result = operate(firstNumber, secondNumber, operator);
+    firstNumber = result;
+    operator = subtract;
+    display.textContent = "";
+  } else {
+    firstNumber = display.textContent;
+    operator = subtract;
+    display.textContent = "";
+  }
+  console.log(`firstNumber: ${firstNumber}`);
+  console.log(`secondNumber: ${secondNumber}`);
+  console.log(`result: ${result}`);
 });
 
 multiplyBtn.addEventListener("click", function () {
-  firstNumber = "";
-  operator = multiply;
-
-  firstNumber += display.textContent;
-  display.textContent = "";
+  if (firstNumber !== null) {
+    secondNumber = display.textContent;
+    result = operate(firstNumber, secondNumber, operator);
+    firstNumber = result;
+    operator = multiply;
+    display.textContent = "";
+  } else {
+    firstNumber = display.textContent;
+    operator = multiply;
+    display.textContent = "";
+  }
 });
 divideBtn.addEventListener("click", function () {
-  firstNumber = "";
-  operator = divide;
-
-  firstNumber += display.textContent;
-
-  display.textContent = "";
+  if (firstNumber !== null) {
+    secondNumber = display.textContent;
+    result = operate(firstNumber, secondNumber, operator);
+    firstNumber = result;
+    operator = divide;
+    display.textContent = "";
+  } else {
+    firstNumber = display.textContent;
+    operator = divide;
+    display.textContent = "";
+  }
 });
 
 equalsBtn.addEventListener("click", function () {
-  secondNumber = "";
-  secondNumber += display.textContent;
-  console.log(`First number: ${firstNumber}`);
-  console.log(`Second number: ${secondNumber}`);
+  if (firstNumber !== null) {
+    secondNumber = parseFloat(display.textContent);
+    result = operate(firstNumber, secondNumber, operator);
+    display.textContent = result;
+    firstNumber = result;
 
-  if (firstNumber)
-    display.textContent = operate(firstNumber, secondNumber, operator);
-  firstNumber = "";
-  secondNumber = "";
+    firstNumber = null;
+    secondNumber = null;
+  }
 });
+
 clearBtn.addEventListener("click", function () {
-  firstNumber = "";
-  secondNumber = "";
+  firstNumber = null;
+  secondNumber = null;
   display.textContent = "";
-  operator = "";
+  operator = null;
+  result = null;
 });
